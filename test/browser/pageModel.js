@@ -11,10 +11,17 @@ function finder() {
 }
 
 module.exports = browser.component({
-  contents: function() {
+  repositoryContents: function() {
     return this.find('.contentList').component({
       files: finder('.contentList-file'),
       directories: finder('.contentList-directory')
+    })
+  },
+
+  setupPanel: function() {
+    return this.find('.setupPanel').component({
+      gitRemoteInput: finder('.setupPanel-gitRemote'),
+      addRemote: finder('setupPanel-addRemote')
     })
   }
 })

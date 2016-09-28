@@ -4,6 +4,6 @@ const pageModel = require('./pageModel');
 describe('Browsing files', () => {
   it('lists the folders and files', () => {
     mountApp();
-    return pageModel.contents().directories().shouldHave({text: 'some directory'});
+    return pageModel.repositoryContents().directories().shouldHave({text: 'some directory'});
   });
 })
