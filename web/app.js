@@ -25,7 +25,7 @@ module.exports = () => {
     res.render('index');
   });
 
-  app.get('/contents', (req, res) => {
+  app.get('/ls-tree', (req, res) => {
     var repository, contents = [];
     Git.Repository.open(repositoryDirectory).then((repo) => {
       repository = repo
@@ -49,7 +49,7 @@ module.exports = () => {
     })
   })
 
-  app.post('/clone-repository', (req, res) => {
+  app.post('/clone', (req, res) => {
     var gitRemote = req.body.gitRemote;
 
     return Git.Clone(gitRemote, repositoryDirectory).then((repo)=> {

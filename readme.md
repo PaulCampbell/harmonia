@@ -14,9 +14,9 @@
 
 # Clone a repo
 
-curl http://localhost:4000/clone-repository -d '{ "gitRemote": "https://github.com/PaulCampbell/harmonia-data"}' --header "Content-Type:application/json"
+curl http://localhost:4000/clone -d '{ "gitRemote": "https://github.com/PaulCampbell/harmonia-data"}' --header "Content-Type:application/json"
 
 
 # Now read the repo
 
-curl http://localhost:4000/contents
+curl http://localhost:4000/ls-tree
